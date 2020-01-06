@@ -9,7 +9,6 @@ else
 	mkdir $rom/
 fi
 cd $rom
-cd build/
 if ! [ -d ../../repo_cache/ ]; then
 	mkdir ../../repo_cache/
 fi
