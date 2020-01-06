@@ -24,13 +24,13 @@ sleep 2
 source device/xp_$1_$2.conf
 echo "	cheking config compatibility..."
 sleep 1
+rm -rf build
 for comp in $(cat info/co_ver)
 do
 sleep 0.1
 if grep -q "CONF=$comp" device/xp_$1_$2.conf; then
 	echo " config $comp is set"
 	export COMP="1"
-	rm -rf build
 	mkdir build
 	mkdir build/conf
 	source device/base/xp_$comp.conf 
@@ -61,6 +61,11 @@ echo "Android version:= $ANDROID"
 echo "Device:= $repo_device"
 echo "Kernel:= $repo_kernel"
 echo "Vendor:= $repo_vendor"
+echo "BUILD:= $ROMS"
 echo "###################################"
-	
- 
+for rom in $ROMS
+do
+source base/android_"$rom"_"$ANDROID".sh
+source base/device_get_repo.sh
+source base/android_build.sh
+done
