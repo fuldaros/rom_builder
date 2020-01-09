@@ -19,10 +19,10 @@ if ! [ -d ../../repo_cache/$rom ]; then
 else
 	if ! [ -d ../../repo_cache/$rom/repo ]; then
 		cd ../../repo_cache/$rom
-		mv repo .repo
+		repo init -u git://github.com/LineageOS/android.git -b lineage-16.0	
 	else
 		cd ../../repo_cache/$rom
-		repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
+		mv repo .repo
 	fi
 fi
 
