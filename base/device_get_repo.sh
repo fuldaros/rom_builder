@@ -18,10 +18,12 @@ if ! [ -d device_cache/$DEVICE ]; then
 	git clone $repo_vendor vendor
 	cd ../..
 else
+	cd device_cache/$DEVICE
 	for req in device kernel vendor
 	do
 	pull
 	done
+	cd ../..
 fi
 cd build/$rom
 echo "# SYNC DEVICE TREE"
