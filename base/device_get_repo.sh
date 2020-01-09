@@ -25,10 +25,10 @@ else
 fi
 cd build/$rom
 echo "# SYNC DEVICE TREE"
-git clone "$device_ca"/device device/$MAN/$DEVICE
+git clone "../../$device_ca"/device device/$MAN/$DEVICE
 echo "# SYNC KERNEL SOURCE"
-git clone "$device_ca"/kernel kernel/$MAN/$CPU
+git clone "../../$device_ca"/kernel kernel/$MAN/$CPU
 echo "# SYNC VENDOR"
-git clone "$device_ca"/vendor vendor/$MAN
+git clone "../../$device_ca"/vendor vendor/$MAN
 cd ../..
 
