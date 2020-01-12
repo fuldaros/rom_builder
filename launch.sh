@@ -65,7 +65,8 @@ echo "BUILD:= $ROMS"
 echo "###################################"
 for rom in $ROMS
 do
-source base/android_"$rom"_"$ANDROID".sh
+source base/roms/"$rom"_"$ANDROID".conf
+source base/android_rom.sh
 source base/device_get_repo.sh
 source base/android_build.sh
 done

@@ -25,7 +25,7 @@ else
 	done
 	cd ../..
 fi
-cd build/$rom
+cd build/"$rom"-"$ANDROID"
 echo "# SYNC DEVICE TREE"
 git clone ../../"$device_ca"/device device/$MAN/$DEVICE
 echo "# SYNC KERNEL SOURCE"
